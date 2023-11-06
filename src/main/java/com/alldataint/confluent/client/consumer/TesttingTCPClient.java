@@ -20,10 +20,9 @@ public class TesttingTCPClient {
                 // read message from server
                 BufferedReader br=new BufferedReader(new InputStreamReader(cs.getInputStream()));
                 String msg=br.readLine();
-                System.out.println("Message received from server: "+msg);
+                System.out.println(msg);
 
                 if (Objects.equals(msg, CommonConstants.ping)) {
-                    // send message to server
                     PrintWriter pw=new PrintWriter(cs.getOutputStream(),true);
                     pw.println(CommonConstants.pong);
                 }
